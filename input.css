@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+:root{
+    --Dark-Blue: hsl(240, 38%, 20%);
+    --Grayish-Blue: hsl(240, 18%, 77%);
+}
+html{
+    font-family: "Inter", sans-serif;
+    font-size: 32px
+}
+.textp{
+    font-weight: 300;
+    font-size: .7rem;
+    line-height: 1rem;
+    color: var(--Dark-Blue);
+}
+.name{
+    color: var(--Dark-Blue);
+    font-size: .5rem;
+    font-weight: 700;
+}
+.name span{
+    color: var(--Grayish-Blue);
+    font-weight: 500;
+    display: block;
+
+}

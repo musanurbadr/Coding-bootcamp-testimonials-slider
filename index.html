@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+      :root {
+        --Dark-Blue: hsl(240, 38%, 20%);
+        --Grayish-Blue: hsl(240, 18%, 77%);
+      }
+
+      .testimonial-text {
+        color: var(--Dark-Blue);
+      }
+      .testimonial-name span {
+        display: block;
+        color: var(--Grayish-Blue);
+      }
+  </style>
+  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+</head>
+<body class="min-h-screen w-full flex items-center justify-center bg-no-repeat bg-left-bottom bg-inherit" style="background-image: url('./images/pattern-curve.svg');">
+  <div class="block h-full w-full m-0 mx-auto max-w-4xl relative">
+    <div id="testimonial-slider" class="w-full flex flex-col-reverse lg:flex-row items-center text-center lg:text-left transition-opacity duration-500">
+      <div class="pt-7 flex items-center flex-col lg:flex-row bg-no-repeat bg-center bg-top lg:bg-left lg:pt-0" style="background-image: url('./images/pattern-quotes.svg');">
+        <div class="lg:pl-10">
+          <p class="testimonial-text">
+            “ I’ve been interested in coding for a while but never taken the jump, until now. 
+            I couldn’t recommend this course enough. I’m now in the job of my dreams and so 
+            excited about the future. ”
+          </p>
+          <h4 class="testimonial-name mt-5">
+            Tanya Sinclair
+            <span>UX Engineer</span>
+          </h4>
+        </div>
+      </div>
+      <div class="w-full flex justify-center items-center lg:justify-end lg:pl-10 bg-center bg-no-repeat bg-contain p-10 relative" style="background-image: url('./images/pattern-bg.svg');">
+        <img class="max-w-xs h-auto" src="./images/image-tanya.jpg" alt="Tanya Sinclair, UX Engineer, smiling">     
+        <div class="flex sm:absolute sm:bottom-0 sm:left-1/4 sm:p-4 bg-white rounded-full cursor-pointer p-2">
+            <button id="prev-slide" class="prev-slide mx-2 p-1 rounded-full hover:bg-slate-400">
+                <img src="./images/icon-prev.svg" alt="Previous Slide">
+            </button>
+            <button id="next-slide" class="next-slide mx-2 p-1 rounded-full hover:bg-slate-400">
+                <img src="./images/icon-next.svg" alt="Next Slide">
+            </button>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div id="hidden-testimonials" class="hidden">
+      <div class="slide-text">
+        <p>
+          “ If you want to lay the best foundation possible I’d recommend taking this course. 
+          The depth the instructors go into is incredible. I now feel so confident about 
+          starting up as a professional developer. ”
+        </p>
+        <h4 class="testimonial-name">John Tarkpor
+        <span>Junior Front-end Developer</span></h4>
+      </div>
+      <div class="slide-img">
+        <img src="./images/image-john.jpg" alt="John Tarkpor">
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const testimonials = [
+      {
+        text: "“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”",
+        name: "Tanya Sinclair",
+        role: "UX Engineer",
+        image: "./images/image-tanya.jpg"
+      },
+      {
+        text: "“ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”",
+        name: "John Tarkpor",
+        role: "Junior Front-end Developer",
+        image: "./images/image-john.jpg"
+      }
+    ];
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      const slider = document.getElementById('testimonial-slider');
+      slider.style.opacity = 0;
+      setTimeout(() => {
+        slider.querySelector('.testimonial-text').innerText = testimonials[index].text;
+        slider.querySelector('.testimonial-name').innerHTML = testimonials[index].name + '<span>' + testimonials[index].role + '</span>';
+        slider.querySelector('img').src = testimonials[index].image;
+        slider.style.opacity = 1;
+      }, 500);
+    }
+
+    document.getElementById('prev-slide').addEventListener('click', () => {
+      currentSlide = (currentSlide === 0) ? testimonials.length - 1 : currentSlide - 1;
+      showSlide(currentSlide);
+    });
+
+    document.getElementById('next-slide').addEventListener('click', () => {
+      currentSlide = (currentSlide === testimonials.length - 1) ? 0 : currentSlide + 1;
+      showSlide(currentSlide);
+    });
+
+    showSlide(currentSlide);
+  </script>
+</body>
+</html>
