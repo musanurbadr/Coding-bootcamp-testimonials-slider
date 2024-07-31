@@ -1,11 +1,12 @@
 {
-  "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "tailwindcss": "^3.4.3"
-  },
   "name": "tailwind",
   "version": "1.0.0",
+  "description": "",
   "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  
   "dependencies": {
     "ansi-regex": "^6.0.1",
     "ansi-styles": "^6.2.1",
@@ -31,7 +32,6 @@
     "fastq": "^1.17.1",
     "fill-range": "^7.1.1",
     "foreground-child": "^3.1.1",
-    "fsevents": "^2.3.3",
     "function-bind": "^1.1.2",
     "glob": "^10.4.1",
     "glob-parent": "^6.0.2",
@@ -97,11 +97,15 @@
     "wrap-ansi-cjs": "^7.0.0",
     "yaml": "^2.4.2"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "npm-force-resolutions": "^0.0.10",
+    "tailwindcss": "^3.4.3"
+  },
+  "optionalDependencies": {
+    "linux": "^2.3.3"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "ISC"
 }

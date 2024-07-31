@@ -1,0 +1,28 @@
+{
+    "name": "your-project-name",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "preinstall": "npx npm-force-resolutions",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+      // Your other dependencies
+    },
+    "devDependencies": {
+      "@tailwindcss/forms": "^0.5.7",
+      "npm-force-resolutions": "^0.0.10",
+      "tailwindcss": "^3.4.3"
+    },
+    "optionalDependencies": {
+      "fsevents": "^2.3.3"
+    },
+    "resolutions": {
+      "fsevents": "^2.3.3"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+  
