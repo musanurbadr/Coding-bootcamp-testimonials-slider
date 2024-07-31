@@ -34,3 +34,8 @@ html{
     display: block;
 
 }
+.span {
+    color: var(--Grayish-Blue);
+    font-weight: 500;
+    display: block;
+}
